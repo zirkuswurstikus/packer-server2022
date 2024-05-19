@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.require_version ">= 1.6.2"
+
+Vagrant.configure("2") do |config|
+  config.vm.define "WINDOWS_SERVER2022_DC_BASE-0"
+  config.vm.box = "WINDOWS_SERVER2022_DC_BASE" # CHANGEME
+  config.vm.communicator = "winrm"
+
+  # Admin user name and password
+  config.winrm.username = "vagrant"
+  config.winrm.password = "vagrant"
+
+  config.vm.guest = :windows
+  config.windows.halt_timeout = 15
+
+  config.vm.provider :hyperv do |v|
+    v.cpus = 4
+    v.maxmemory = 4096
+  end
+end

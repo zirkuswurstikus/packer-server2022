@@ -1,0 +1,16 @@
+= README
+
+== Tl;dr
+
+.Image
+* Windows Server 2022 Datacenter
+* Latest updates
+    * wsusoffline
+    * MS upstream server
+* 256 GB VHD
+    
+
+=== Build
+.as Administrator
+ ./build.ps1
+
