@@ -14,3 +14,4 @@
 .as Administrator
  ./build.ps1
 
+- D:\ for the setup iso

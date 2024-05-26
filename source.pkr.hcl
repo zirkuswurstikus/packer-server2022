@@ -32,8 +32,8 @@ source "hyperv-iso" "hyperv" {
   guest_additions_mode              = "disable"
   iso_checksum                      = "${var.iso_checksum}"
   iso_url                           = "${var.iso_url}"
-  secondary_iso_images				      = ["../common/updates/wsusoffline/iso/wsusoffline-w100-x64.iso"] //[E:\] if removed the path for cd_files should be changed back to e: 
-  memory                            = "${var.memory}"
+  secondary_iso_images              = "ressources/empty.iso"
+  # secondary_iso_images				      = ["C:/wsusoffline/iso/wsusoffline-w100-x64.iso"] //[E:\] if removed the path for cd_files should be changed back to e: 
   //shutdown_command                  = "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\""
   shutdown_command                  = "C:\\Windows\\system32\\Sysprep\\sysprep.exe /generalize /oobe /shutdown /unattend:F:\\autounattend_sysprep.xml"  
   shutdown_timeout                  = "60m"
