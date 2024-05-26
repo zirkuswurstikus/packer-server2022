@@ -29,7 +29,7 @@ source "hyperv-iso" "hyperv" {
   iso_checksum                      = "${var.iso_checksum}"
   iso_url                           = "${var.iso_url}"
   # drive E:
-  secondary_iso_images              = "ressources/empty.iso"
+  secondary_iso_images              = ["ressources/empty.iso"]
   # secondary_iso_images				      = ["C:/wsusoffline/iso/wsusoffline-w100-x64.iso"] //[E:\] if removed the path for cd_files should be changed back to e: 
   # drive F:
   cd_files                          = [
@@ -86,8 +86,8 @@ build {
   }
 
   post-processor "vagrant" {
-    keep_input_artifact  = false	// DEFAULT false
-    output               = "./out/WINDOWS_SERVER2022_DC_BASE_{{ .Provider }}.box"
+    keep_input_artifact  = true	// DEFAULT false
+    output               = "out/WINDOWS_SERVER2022_DC_BASE_{{ .Provider }}.box"
     vagrantfile_template = "ressources/configs/WINDOWS_SERVER2022_DC_BASE.vagrantfile.template"
   }
 
