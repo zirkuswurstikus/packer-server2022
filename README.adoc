@@ -14,4 +14,19 @@
 .as Administrator
  ./build.ps1
 
+== Files
+
+=== resources/
+
+==== empty.iso
+
+Using the option _secondary_iso_images_ is used to attach an iso image during build using hyperv-iso.
+There is a problem in using _secondary_iso_image_ together with _cd_files_.
+
+.order of drive letters is a s follows.
 - D:\ for the setup iso
+- E:\ for _secondary_iso_images_
+- F:\ for _cd_files
+In this repo _cd_files_ is used to provide access and address scripts used in _ressources/config_.
+Depending on the use of _secondary_iso_image_ the drive letters may change.
+An empty iso is used to address this problem. 
